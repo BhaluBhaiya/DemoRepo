@@ -1,0 +1,72 @@
+use employee;
+create table Emp_details(emp_id int ,emp_name varchar(10), emp_dep varchar(10), emp_loc varchar(10));
+show tables; 
+create table emptable (empid numeric, empname varchar(25), deptname varchar(25), mobile varchar(15), address varchar(25));
+
+desc emptable;
+
+insert into emptable values(123, 'Ashish', 'Java', '8075701654','Banglore',1);
+
+select* from emptable;
+
+alter table emptable add constraint pk primary key (empid);
+delete from emptable where empname = 'bhanu';
+alter table emptable add column deptid numeric;
+update emptable set deptid=1 where deptname = 'java';
+insert into emptable values(122, 'Ayush', 'Testing', '9892215478','Pune',7);
+alter table emptable drop column deptid;
+alter table emptable drop column deptname;
+
+create table dept (deptid numeric, deptname varchar(15), location varchar(20));
+
+select* from dept;
+
+insert into dept values(1, 'Development','Banglore');
+insert into dept values(2, 'Testing','Pune');
+alter table dept add constraint dpk primary key (deptid);
+
+desc dept;
+
+alter table emptable add column deptid numeric; 
+alter table emptable add constraint dfk foreign key(deptid) references dept(deptid);  
+update emptable set deptid=1 where address = 'Banglore';
+update emptable set deptid=2 where address = 'Pune';
+
+create table studtable(studid numeric, courseid numeric, studname varchar(20), coursename varchar(20));
+alter table studtable add column marks numeric;
+
+desc studtable;
+select* from studtable;
+
+insert into studtable values(121,1,'Bhanu','Java',89);
+insert into studtable values(122,2,'Bhanu','Spring',92);
+update studtable set studid = 121 where courseid = 2;
+
+
+insert into studtable values(122,1,'Ayush','Java',89);
+insert into studtable values(122,2,'Ayush','Spring',92);
+alter table studtable add constraint spk primary key (studid,courseid);
+
+create table student_2nf(studid numeric primary key, studname varchar(20));
+create table course_2nf(courseid numeric primary key, coursename varchar(20));
+create table stud_course_2nf(studid numeric, courseid numeric, marks numeric, primary key(studid,courseid));
+
+select* from student_2nf;
+select* from course_2nf;
+select* from stud_course_2nf;
+
+desc student_2nf;
+desc course_2nf;
+desc stud_course_2nf;
+
+insert into student_2nf values(121,'Bhanu');
+insert into student_2nf values(122,'Ayush');
+
+insert into course_2nf values(1,'Java');
+insert into course_2nf values(2,'Spring');
+
+insert into stud_course_2nf values(121,1,89);
+insert into stud_course_2nf values(121,2,92);
+
+insert into stud_course_2nf values(122,1,89);
+insert into stud_course_2nf values(122,2,92);
