@@ -53,4 +53,24 @@ create table consignment(orderid numeric, pdtid numeric, quantity numeric, prima
 
 /*-----------------------------------------------Q7----------------------------------------------------*/
 
+create table employee(empid numeric primary key, empname varchar(20));
 
+create table projects(pjtid numeric primary key , pjtname varchar(20));
+
+create table assisgned(empid numeric, empname varchar(20), pjtid numeric, pjtname varchar(20), primary key(empid,pjtid), foreign key(empid) references employee(empid), foreign key(pjtid) references projects(pjtid));
+
+/*-----------------------------------------------Q8----------------------------------------------------*/
+
+create table driver(driverid numeric primary key, drivername varchar(20));
+
+create table route(routeid numeric primary key, routename varchar(20) , dist varchar(20));
+
+create table journey(driverid numeric , drivername varchar(20) , routeid numeric, routename varchar(20), primary key (driverid,routeid), foreign key(driverid) references driver(driverid), foreign key(routeid) references route(routeid));
+
+/*-----------------------------------------------Q9----------------------------------------------------*/
+
+create table orders (orderid numeric primary key, custname varchar(20), city varchar(20));
+
+create table product(pdtid numeric primary key, pdtname varchar(20), price decimal(10,2));
+
+create table consignment(orderid numeric, pdtid numeric, itemseq numeric, quantity numeric, primary key(orderid,pdtid,itemseq), foreign key (orderid) references orders(orderid), foreign key (pdtid) references product(pdtid));
