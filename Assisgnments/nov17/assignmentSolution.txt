@@ -1,0 +1,56 @@
+create database assignments;
+use assignments;
+/*-----------------------------------------------Q1----------------------------------------------------*/
+
+create table student (studid numeric, studname varchar(20), phone numeric,primary key(studid,phone));
+select* from student;
+insert into student values(101,'Ravi',98756);
+insert into student values(101,'Ravi',87654);
+
+insert into student values(102,'Anita',99900);
+
+insert into student values(103,'john',888888);
+insert into student values(103,'john',666666);
+insert into student values(103,'john',777777);
+
+/*-----------------------------------------------Q2----------------------------------------------------*/
+
+create table orders (orderid numeric, custname varchar(20), item varchar(20),primary key(orderid,item));
+insert into orders values(1,'Raj','Pen');
+insert into orders values(1,'Raj','Pencil');
+
+insert into orders values(2,'Sam','Notebook');
+
+insert into orders values(3,'Raj','Eraser');
+insert into orders values(3,'Raj','Marker');
+insert into orders values(3,'Raj','Pen');
+select* from orders;
+
+/*-----------------------------------------------Q3----------------------------------------------------*/
+
+create table Emp(empid numeric primary key, empname varchar(20));
+create table Empskill(empid numeric , skill varchar(20), primary key(empid,skill) , foreign key (empid) references emp(empid));
+
+/*-----------------------------------------------Q4----------------------------------------------------*/
+
+create table customer(custid numeric primary key, custname varchar(20), city varchar(20), state varchar(20), country varchar(20));
+
+/*-----------------------------------------------Q5----------------------------------------------------*/
+
+create table student(studid numeric primary key, studname varchar(20));
+
+create table course(courseid numeric primary key, coursename varchar(20));
+
+create table enroll(studid numeric, studname varchar(20), courseid numeric, coursename varchar(20), primary key(studid,courseid), foreign key (studid) references student(studid),foreign key (courseid) references course(sourseid));
+
+/*-----------------------------------------------Q6----------------------------------------------------*/
+
+create table orders (orderid numeric primary key, custname varchar(20));
+
+create table product(pdtid numeric primary key, pdtname varchar(20));
+
+create table consignment(orderid numeric, pdtid numeric, quantity numeric, primary key(orderid,pdtid), foreign key (orderid) references orders(orderid));
+
+/*-----------------------------------------------Q7----------------------------------------------------*/
+
+
