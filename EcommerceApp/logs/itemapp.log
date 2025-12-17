@@ -1,0 +1,14 @@
+2025-12-16 10:47:35 INFO  c.d.EcommerceApp.aop.LoggingAspect Start ->ResponseEntity com.demo.EcommerceApp.exceptions.GlobalExceptionClass.handleValidationException(Exception)
+2025-12-16 10:47:35 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource Day12/index.jsp for request '/Day12/index.jsp'.]
+2025-12-16 10:47:35 INFO  c.d.EcommerceApp.aop.LoggingAspect Start ->ResponseEntity com.demo.EcommerceApp.exceptions.GlobalExceptionClass.handleValidationException(Exception)
+2025-12-16 10:47:35 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico for request '/favicon.ico'.]
+2025-12-16 10:47:42 INFO  c.d.EcommerceApp.aop.LoggingAspect Start ->ResponseEntity com.demo.EcommerceApp.exceptions.GlobalExceptionClass.handleValidationException(Exception)
+2025-12-16 10:47:42 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource  for request '/'.]
+2025-12-16 10:47:42 INFO  c.d.EcommerceApp.aop.LoggingAspect Start ->ResponseEntity com.demo.EcommerceApp.exceptions.GlobalExceptionClass.handleValidationException(Exception)
+2025-12-16 10:47:42 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico for request '/favicon.ico'.]
+2025-12-16 10:53:14 INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin Application shutdown requested.
+2025-12-16 10:53:14 INFO  o.s.boot.tomcat.GracefulShutdown Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-16 10:53:14 INFO  o.s.boot.tomcat.GracefulShutdown Graceful shutdown complete
+2025-12-16 10:53:14 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-16 10:53:14 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Shutdown initiated...
+2025-12-16 10:53:14 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Shutdown completed.
